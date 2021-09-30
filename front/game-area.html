@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Last quizz standing</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/style-bootstrap.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body id="page-top" class="bg-dark">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <p class="navbar-brand">Last Quizz Standing</p>
+            </div>
+        </nav>
+        <div class="masthead" id="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <!-- Waiting-room-->
+                <div class="row deco-box" id="waiting-room">
+                    <p class="message-url">URL à saisir pour rejoindre la partie : <span class="join-link" id="join-room-link"></span></p>
+                    <form id="new-user-form">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Saisisez votre pseudo pour rejoindre la partie</label>
+                            <div class="alert-danger" id="message-username"></div>
+                            <input type="text" class="form-control" id="username" name="username" required minlength="2">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Rejoindre</button>
+                      </form>
+                      <h3>Liste des joueurs</h3>
+                    <ul class="list-group" id="waiting-list">
+                    </ul>
+                    <button class="btn btn-success btn-start" id="start-game" disabled>Lancer la partie !</button>
+                </div>
+                <!-- Game -->
+                <div id="game-area">
+                    <div id="player-area">
+                        <!-- Début des cartes-->
+
+                          <!-- fin  des cartes-->
+                        
+                    </div>
+                    <div id="loser-area">
+                        <h2>Ils nous ont quitté ...</h2>
+                        <div id="wall-of-shame"></div>
+                    </div>
+                    <div id="quizz-area">
+                        <div class="card card-quiz">
+                            <h5 id="quizz-question" class="card-title card-title-quiz"></h5>
+                            <div class="card-body">
+                              <button id="quizz-answer-1" class="btn btn-primary btn-answer"></button>
+                              <button id="quizz-answer-2" class="btn btn-primary btn-answer"></button>
+                              <button id="quizz-answer-3" class="btn btn-primary btn-answer"></button>
+                              <button id="quizz-answer-4" class="btn btn-primary btn-answer"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        <div id="score-table-box">
+            <p id="end-party-status" class="end-message">Message à adapter selon statut du joueur</p>
+            <a href=""></a>
+            <a class="btn btn-primary" href="/create-party">Créer une autre partie</a>
+            <h2 class="text-white">Score</h2>
+            <table id="score-table"  class="table table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Pseudo</th>
+                    <th scope="col">Score</th>
+                </tr>
+            </table>
+        </div>
+
+
+        <!-- modal -->
+
+        <div id="time-modal">
+            <h2 class="secondary-title" id="time-modal-title">Prochaine question dans</h2>
+            <p id="time-modal-value"></p>
+        </div>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="../js/scripts.js"></script>
+        <script type="text/javascript" src="../socket.io/socket.io.js"></script>
+        <script src="../js/game-tool.js"></script>
+        <script src="../js/waiting-area.js"></script>
+    </body>
+</html>
